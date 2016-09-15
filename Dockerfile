@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:14.04.3
 
 ## This handle reaches Thierry
 MAINTAINER "Thierry Onkelinx" thierry.onkelinx@inbo.be
@@ -17,31 +17,31 @@ RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen \
   && /usr/sbin/update-locale LANG=en_US.UTF-8
 
 ## Add apt-get repositories
-RUN sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial/" >> /etc/apt/sources.list' \
+RUN sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list' \
   && gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9 \
   && gpg -a --export E084DAB9 | apt-key add -
 
 ## Install R base
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
-    r-base-core=3.3.0-1xenial0 \
-    r-base-dev=3.3.0-1xenial0 \
-    r-cran-boot=1.3-18-1cran1xenial0 \
-    r-cran-class=7.3-14-1xenial0 \
-    r-cran-cluster=2.0.4-1xenial0 \
-    r-cran-codetools=0.2-14-1 \
-    r-cran-foreign=0.8.66-1xenial0 \
-    r-cran-mass=7.3-45-1xenial0 \
-    r-cran-kernsmooth=2.23-15-1 \
-    r-cran-lattice=0.20-33-1 \
-    r-cran-matrix=1.2-6-1xenial0 \
-    r-cran-mgcv=1.8-12-1cran1xenial0 \
-    r-cran-nnet=7.3-12-1xenial0 \
-    r-cran-nlme=3.1.127-1xenial0 \
-    r-cran-rpart=4.1-10-1 \
-    r-cran-spatial=7.3-11-1xenial0 \
-    r-cran-survival=2.39-2-1cran1xenial0 \
-    r-recommended=3.3.0-1xenial0 \
+    r-base-core=3.2.3-6trusty0 \
+    r-base-dev=3.2.3-6trusty0 \
+    r-cran-boot=1.3-17-1trusty0 \
+    r-cran-class=7.3-14-1trusty0 \
+    r-cran-cluster=2.0.3-1trusty0 \
+    r-cran-codetools=0.2-14-1~ubuntu14.04.1~ppa1 \
+    r-cran-foreign=0.8.66-1trusty0 \
+    r-cran-kernsmooth=2.23-15-1trusty0 \
+    r-cran-lattice=0.20-33-1trusty0 \
+    r-cran-matrix=1.2-4-1trusty0 \
+    r-cran-mgcv=1.8-12-1cran1trusty0 \
+    r-cran-nlme=3.1.125-1trusty0 \
+    r-cran-nnet=7.3-12-1trusty0 \
+    r-cran-mass=7.3-44-1trusty0 \
+    r-cran-rpart=4.1-10-1trusty0 \
+    r-cran-spatial=7.3-10-1trusty0 \
+    r-cran-survival=2.39-2-1cran1trusty0 \
+    r-recommended=3.2.3-6trusty0 \
   && apt-get clean
 
 ## Install wget

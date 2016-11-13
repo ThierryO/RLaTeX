@@ -70,6 +70,6 @@ RUN apt-get update \
   && updmap-sys
 
 ## Install pandoc
-RUN wget https://github.com/jgm/pandoc/releases/download/1.17.0.2/pandoc-1.17.0.2-1-amd64.deb \
-  && dpkg -i pandoc-1.17.0.2-1-amd64.deb \
-  && rm pandoc-1.17.0.2-1-amd64.deb
+RUN wget https://github.com/jgm/pandoc/releases/download/1.18/pandoc-1.18-1-amd64.deb \
+  && dpkg -i pandoc-1.18-1-amd64.deb \
+  && rm pandoc-1.18-1-amd64.deb

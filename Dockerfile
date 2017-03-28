@@ -62,6 +62,7 @@ RUN apt-get update \
     texlive-fonts-recommended \
     texlive-humanities \
     texlive-latex-extra \
+    texlive-xetex \
     texinfo \
   && apt-get clean \
   && cd /usr/share/texlive/texmf-dist \

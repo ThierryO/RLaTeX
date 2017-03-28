@@ -61,6 +61,7 @@ RUN apt-get update \
     qpdf \
     texlive-fonts-recommended \
     texlive-humanities \
+    texlive-lang-european \
     texlive-latex-extra \
     texlive-xetex \
     texinfo \

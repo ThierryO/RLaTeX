@@ -68,6 +68,7 @@ RUN apt-get update \
     texlive-latex-extra \
     texlive-xetex \
     texinfo \
+    ghostscript \
   && apt-get clean \
   && cd /usr/share/texlive/texmf-dist \
   && wget http://mirrors.ctan.org/install/fonts/inconsolata.tds.zip \

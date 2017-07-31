@@ -1,6 +1,9 @@
 [![DOI](https://zenodo.org/badge/68300094.svg)](https://zenodo.org/badge/latestdoi/68300094)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/inbo/RLaTeX/master/LICENSE)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+[![](https://images.microbadger.com/badges/image/inbobmk/rlatex.svg)](https://microbadger.com/images/inbobmk/rlatex)
+[![](https://img.shields.io/docker/pulls/inbobmk/rlatex.svg)](https://hub.docker.com/r/inbobmk/rlatex)
+[![](https://img.shields.io/docker/automated/inbobmk/rlatex.svg)](https://hub.docker.com/r/inbobmk/rlatex/builds)
 
 This Docker image contains a stable version of Ubuntu, R, LaTeX and pandoc. Each tag represents a different R version. The latest tag matched the tag with with highest R version.
 

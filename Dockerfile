@@ -1,5 +1,10 @@
 FROM ubuntu:17.04
 
+LABEL org.label-schema.license="MIT" \
+      org.label-schema.vcs-url="https://github.com/inbo/RLaTeX" \
+      org.label-schema.vendor="Research Institute for Nature and Forest" \
+      maintainer="Thierry Onkelinx <thierry.onkelinx@inbo.be>"
+
 ## This handle reaches Thierry
 MAINTAINER "Thierry Onkelinx" thierry.onkelinx@inbo.be
 

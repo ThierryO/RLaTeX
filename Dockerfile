@@ -1,12 +1,16 @@
 FROM ubuntu:17.04
 
-LABEL org.label-schema.license="MIT" \
+ARG BUILD_DATE
+ARG VCS_REF
+LABEL org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.name="RStable" \
+      org.label-schema.description="A docker image with stable versions of R and a bunch of package. The full list of packages is available in the README." \
+      org.label-schema.license="MIT" \
+      org.label-schema.url="e.g. https://www.inbo.be/" \
+      org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.vcs-url="https://github.com/inbo/RLaTeX" \
       org.label-schema.vendor="Research Institute for Nature and Forest" \
       maintainer="Thierry Onkelinx <thierry.onkelinx@inbo.be>"
-
-## This handle reaches Thierry
-MAINTAINER "Thierry Onkelinx" thierry.onkelinx@inbo.be
 
 ## Set a default user. Available via runtime flag `--user docker`
 ## Add user to 'staff' group, granting them write privileges to /usr/local/lib/R/site.library

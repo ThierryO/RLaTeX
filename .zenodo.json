@@ -1,0 +1,18 @@
+{
+ "creators": [
+      {
+        "name": "Thierry Onkelinx",
+        "affiliation": "Research Instute for Nature and Forest"
+      }
+    ],
+  "description": "rlatex provides a versioned docker image with a minimal LaTeX and pandoc configuration",
+  "keywords": [
+    "docker",
+    "R",
+    "rlatex",
+    "reproducibility",
+    "containers"
+  ],
+  "license": "MIT",
+  "title": "rlatex: Versioned docker image with R and minimal LaTeX and pandoc configuration"
+}

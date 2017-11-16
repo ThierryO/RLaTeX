@@ -56,7 +56,7 @@ RUN apt-get update \
     r-cran-rpart=4.1-11-1zesty0 \
     r-cran-spatial=7.3-11-1zesty0 \
     r-cran-survival=2.41-3-1zesty0 \
-    r-recommended=3.4.2-2zesty0 \
+    r-recommended=3.4.2-2zesty \
   && apt-get clean
 
 ## Install wget

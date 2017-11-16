@@ -39,9 +39,9 @@ RUN apt-get update \
 ## Install R base
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
-    r-base-core=3.4.1-2zesty0 \
-    r-base-dev=3.4.1-2zesty0 \
-    r-cran-boot=1.3-19-1zesty0 \
+    r-base-core=3.4.2-2zesty \
+    r-base-dev=3.4.2-2zesty \
+    r-cran-boot=1.3-20-1zesty0 \
     r-cran-class=7.3-14-2zesty0 \
     r-cran-cluster=2.0.6-2zesty0 \
     r-cran-codetools=0.2-15-1 \
@@ -49,14 +49,14 @@ RUN apt-get update \
     r-cran-kernsmooth=2.23-15-3zesty0 \
     r-cran-lattice=0.20-35-1zesty0 \
     r-cran-mass=7.3-47-1zesty0 \
-    r-cran-matrix=1.2-10-1zesty0 \
-    r-cran-mgcv=1.8-17-2zesty0 \
+    r-cran-matrix=1.2-11-1zesty0 \
+    r-cran-mgcv=1.8-22-1zesty0 \
     r-cran-nlme=3.1.131-3zesty0 \
     r-cran-nnet=7.3-12-2zesty0 \
     r-cran-rpart=4.1-11-1zesty0 \
     r-cran-spatial=7.3-11-1zesty0 \
     r-cran-survival=2.41-3-1zesty0 \
-    r-recommended=3.4.1-2zesty0 \
+    r-recommended=3.4.2-2zesty0 \
   && apt-get clean
 
 ## Install wget

@@ -88,9 +88,9 @@ RUN apt-get update \
   && updmap-sys
 
 ## Install pandoc
-RUN wget https://github.com/jgm/pandoc/releases/download/2.0.2/pandoc-2.0.2-1-amd64.deb \
-  && dpkg -i pandoc-2.0.2-1-amd64.deb\
-  && rm pandoc-2.0.2-1-amd64.deb
+RUN wget https://github.com/jgm/pandoc/releases/download/2.0.4/pandoc-2.0.4-1-amd64.deb \
+  && dpkg -i pandoc-2.0.4-1-amd64.deb\
+  && rm pandoc-2.0.4-1-amd64.deb
 
 ## script to install specific R package from CRAN
 COPY Rprofile.site /usr/lib/R/etc/Rprofile.site

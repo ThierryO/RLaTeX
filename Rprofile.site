@@ -8,7 +8,7 @@ options(
   xpinch = 300,
   ypinch = 300,
   repos = c(
-    RStudio = "https://cloud.rstudio.com/",
+    zeroCloud = "https://cloud.r-project.org/",
     INLA = "https://inla.r-inla-download.org/R/stable"
   )
 )

@@ -1,4 +1,4 @@
-FROM ubuntu:17.04
+FROM ubuntu:16.04
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -32,31 +32,31 @@ RUN apt-get update \
 RUN apt-get update \
   && apt-get install -y --no-install-recommends dirmngr \
   && apt-get clean \
-  && sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu zesty/" >> /etc/apt/sources.list' \
+  && sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial/" >> /etc/apt/sources.list' \
   && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E084DAB9 \
   && gpg -a --export E084DAB9 | apt-key add -
 
 ## Install R base
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
-    r-base-core=3.4.3-1zesty0 \
-    r-base-dev=3.4.3-1zesty0 \
-    r-cran-boot=1.3-20-1zesty0 \
-    r-cran-class=7.3-14-2zesty0 \
-    r-cran-cluster=2.0.6-2zesty0 \
-    r-cran-codetools=0.2-15-1 \
-    r-cran-foreign=0.8.69-1zesty0 \
-    r-cran-kernsmooth=2.23-15-3zesty0 \
-    r-cran-lattice=0.20-35-1zesty0 \
-    r-cran-mass=7.3-47-1zesty0 \
-    r-cran-matrix=1.2-11-1zesty0 \
-    r-cran-mgcv=1.8-22-1zesty0 \
-    r-cran-nlme=3.1.131-3zesty0 \
-    r-cran-nnet=7.3-12-2zesty0 \
-    r-cran-rpart=4.1-11-1zesty0 \
-    r-cran-spatial=7.3-11-1zesty0 \
-    r-cran-survival=2.41-3-2zesty0 \
-    r-recommended=3.4.3-1zesty0 \
+    r-base-core=3.4.3-1xenial0 \
+    r-base-dev=3.4.3-1xenial0 \
+    r-cran-boot=1.3-20-1xenial0 \
+    r-cran-class=7.3-14-2xenial0 \
+    r-cran-cluster=2.0.6-2xenial0 \
+    r-cran-codetools=0.2-15-1cran1xenial0 \
+    r-cran-foreign=0.8.69-1xenial0 \
+    r-cran-kernsmooth=2.23-15-3xenial0 \
+    r-cran-lattice=0.20-35-1cran1xenial0 \
+    r-cran-mass=7.3-47-1xenial0 \
+    r-cran-matrix=1.2-11-1xenial0 \
+    r-cran-mgcv=1.8-22-1cran1xenial0 \
+    r-cran-nlme=3.1.131-3xenial0 \
+    r-cran-nnet=7.3-12-2xenial0 \
+    r-cran-rpart=4.1-11-1xenial0 \
+    r-cran-spatial=7.3-11-1xenial0 \
+    r-cran-survival=2.41-3-2xenial0 \
+    r-recommended=3.4.3-1xenial0 \
   && apt-get clean
 
 ## Install wget

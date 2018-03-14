@@ -65,32 +65,21 @@ RUN apt-get update \
     wget \
   && apt-get clean
 
+## Use custom R profile
+COPY Rprofile.site /usr/lib/R/etc/Rprofile.site
+
+## script to install specific R package from CRAN
+COPY cran_install.sh cran_install.sh
+
 ## Add minimal LaTeX configuration
 ## Taken from https://github.com/rocker-org/hadleyverse/blob/master/Dockerfile
-RUN apt-get update \
+RUN ./cran_install.sh tinytex 0.4 \
   && apt-get install -y --no-install-recommends \
-    lmodern \
     qpdf \
-    texlive-fonts-recommended \
-    texlive-humanities \
-    texlive-lang-european \
-    texlive-latex-extra \
-    texlive-xetex \
-    texinfo \
-    ghostscript \
-  && apt-get clean \
-  && cd /usr/share/texlive/texmf-dist \
-  && wget http://mirrors.ctan.org/install/fonts/inconsolata.tds.zip \
-  && unzip inconsolata.tds.zip \
-  && rm inconsolata.tds.zip \
-  && echo "Map zi4.map" >> /usr/share/texlive/texmf-dist/web2c/updmap.cfg \
-  && mktexlsr \
-  && updmap-sys
+  && Rscript -e "tinytex::install_tinytex()" \
+  && Rscript -e "tinytex::tlmgr_install(c('inconsolata', 'times', 'tex', 'helvetic', 'dvips'))"
 
 ## Install pandoc
 RUN wget https://github.com/jgm/pandoc/releases/download/2.0.4/pandoc-2.0.4-1-amd64.deb \
   && dpkg -i pandoc-2.0.4-1-amd64.deb\
   && rm pandoc-2.0.4-1-amd64.deb
-
-## script to install specific R package from CRAN
-COPY Rprofile.site /usr/lib/R/etc/Rprofile.site

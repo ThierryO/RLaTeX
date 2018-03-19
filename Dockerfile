@@ -50,7 +50,7 @@ RUN apt-get update \
     r-cran-lattice=0.20-35-1cran1xenial0 \
     r-cran-mass=7.3-49-1xenial0 \
     r-cran-matrix=1.2-11-1xenial0 \
-    r-cran-mgcv=1.8-23-1cran1xenial0 \
+    r-cran-mgcv=1.8-23-1xenial0 \
     r-cran-nlme=3.1.131.1-1xenial0 \
     r-cran-nnet=7.3-12-2xenial0 \
     r-cran-rpart=4.1-13-1cran1xenial0 \

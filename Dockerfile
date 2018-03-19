@@ -72,7 +72,7 @@ COPY Rprofile.site /usr/lib/R/etc/Rprofile.site
 COPY cran_install.sh cran_install.sh
 
 ## Add minimal LaTeX configuration
-## Taken from https://github.com/rocker-org/hadleyverse/blob/master/Dockerfile
+## See https://yihui.name/tinytex
 RUN ./cran_install.sh tinytex 0.4 \
   && apt-get install -y --no-install-recommends \
     qpdf \
@@ -80,6 +80,6 @@ RUN ./cran_install.sh tinytex 0.4 \
   && Rscript -e "tinytex::tlmgr_install(c('inconsolata', 'times', 'tex', 'helvetic', 'dvips'))"
 
 ## Install pandoc
-RUN wget https://github.com/jgm/pandoc/releases/download/2.0.4/pandoc-2.0.4-1-amd64.deb \
-  && dpkg -i pandoc-2.0.4-1-amd64.deb\
-  && rm pandoc-2.0.4-1-amd64.deb
+RUN wget https://github.com/jgm/pandoc/releases/download/2.1.3/pandoc-2.1.3-1-amd64.deb \
+  && dpkg -i pandoc-2.1.3-1-amd64.deb\
+  && rm pandoc-2.1.3-1-amd64.deb

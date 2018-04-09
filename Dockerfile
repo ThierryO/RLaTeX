@@ -31,7 +31,6 @@ RUN apt-get update \
 ## Add apt-get repositories
 RUN apt-get update \
   && apt-get install -y --no-install-recommends dirmngr \
-  && apt-get clean \
   && sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial/" >> /etc/apt/sources.list' \
   && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E084DAB9 \
   && gpg -a --export E084DAB9 | apt-key add -
@@ -56,14 +55,12 @@ RUN apt-get update \
     r-cran-rpart=4.1-13-1cran1xenial0 \
     r-cran-spatial=7.3-11-1xenial0 \
     r-cran-survival=2.41-3-2xenial0 \
-    r-recommended=3.4.4-1xenial0 \
-  && apt-get clean
+    r-recommended=3.4.4-1xenial0
 
-## Install wget
+## Install wgetT
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
-    wget \
-  && apt-get clean
+    wget
 
 ## Use custom R profile
 COPY Rprofile.site /usr/lib/R/etc/Rprofile.site

@@ -77,8 +77,8 @@ RUN ./cran_install.sh tinytex 0.4 \
   && apt-get install -y --no-install-recommends \
     qpdf \
   && Rscript -e "tinytex::install_tinytex()" \
-  && Rscript -e "tinytex::tlmgr_install(c('inconsolata', 'times', 'tex', 'helvetic', 'dvips'))" \
-  && export PATH="$HOME/bin:$PATH"
+  && Rscript -e "tinytex::tlmgr_install(c('inconsolata', 'times', 'tex', 'helvetic', 'dvips'))"
+ENV PATH="$HOME/bin:${PATH}"
 
 ## Install pandoc
 RUN wget https://github.com/jgm/pandoc/releases/download/2.1.3/pandoc-2.1.3-1-amd64.deb \

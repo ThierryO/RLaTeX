@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -30,34 +30,35 @@ RUN apt-get update \
 
 ## Add apt-get repositories
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends dirmngr \
-  && sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial/" >> /etc/apt/sources.list' \
-  && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E084DAB9 \
-  && gpg -a --export E084DAB9 | apt-key add -
+  && apt-get install -y --no-install-recommends \
+    gnupg \
+    ca-certificates \
+  && sh -c 'echo "deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/" >> /etc/apt/sources.list' \
+  && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0x51716619e084dab9
 
 ## Install R base
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
-    r-base-core=3.4.4-1xenial0 \
-    r-base-dev=3.4.4-1xenial0 \
-    r-cran-boot=1.3-20-1xenial0 \
-    r-cran-class=7.3-14-2xenial0 \
-    r-cran-cluster=2.0.6-2xenial0 \
-    r-cran-codetools=0.2-15-1cran1xenial0 \
-    r-cran-foreign=0.8.69-1xenial0 \
-    r-cran-kernsmooth=2.23-15-3xenial0 \
-    r-cran-lattice=0.20-35-1cran1xenial0 \
-    r-cran-mass=7.3-49-1xenial0 \
-    r-cran-matrix=1.2-11-1xenial0 \
-    r-cran-mgcv=1.8-23-1xenial0 \
-    r-cran-nlme=3.1.131.1-1xenial0 \
-    r-cran-nnet=7.3-12-2xenial0 \
-    r-cran-rpart=4.1-13-1cran1xenial0 \
-    r-cran-spatial=7.3-11-1xenial0 \
-    r-cran-survival=2.41-3-2xenial0 \
-    r-recommended=3.4.4-1xenial0
+    r-base-core=3.5.0-1bionic \
+    r-base-dev=3.5.0-1bionic \
+    r-cran-boot=1.3-20-1.1cranBionic0 \
+    r-cran-class=7.3-14-2cranArtful0~ubuntu18.04.1~ppa1 \
+    r-cran-cluster=2.0.7-1-1cranBionic0 \
+    r-cran-codetools=0.2-15-1.1cranBionic0 \
+    r-cran-foreign=0.8.70-1cranArtful0~ubuntu18.04.1~ppa1 \
+    r-cran-kernsmooth=2.23-15-3cranArtful0~ubuntu18.04.1~ppa1 \
+    r-cran-lattice=0.20-35-1cranBionic0 \
+    r-cran-mass=7.3-50-1bionic0 \
+    r-cran-matrix=1.2-14-1cranBionic0 \
+    r-cran-mgcv=1.8-24-1bionic0 \
+    r-cran-nlme=3.1.137-1cranBionic0 \
+    r-cran-nnet=7.3-12-2cranArtful0~ubuntu18.04.1~ppa1 \
+    r-cran-rpart=4.1-13-1cranBionic0  \
+    r-cran-spatial=7.3-11-2cranArtful0~ubuntu18.04.1~ppa1 \
+    r-cran-survival=2.42-6-1cran1bionic0 \
+    r-recommended=3.5.0-1bionic
 
-## Install wgetT
+## Install wget
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
     wget

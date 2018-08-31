@@ -12,6 +12,11 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vendor="Research Institute for Nature and Forest" \
       maintainer="Thierry Onkelinx <thierry.onkelinx@inbo.be>"
 
+## for apt to be noninteractive
+ENV DEBIAN_FRONTEND noninteractive
+ENV DEBCONF_NONINTERACTIVE_SEEN true
+
+
 ## Set a default user. Available via runtime flag `--user docker`
 ## Add user to 'staff' group, granting them write privileges to /usr/local/lib/R/site.library
 ## User should also have & own a home directory (for rstudio or linked volumes to work properly).
@@ -71,7 +76,8 @@ COPY cran_install.sh cran_install.sh
 
 ## Add minimal LaTeX configuration
 ## See https://yihui.name/tinytex
-RUN ./cran_install.sh tinytex 0.8 \
+RUN ./cran_install.sh xfun 0.3 \
+  && ./cran_install.sh tinytex 0.8 \
   && apt-get install -y --no-install-recommends \
     qpdf \
   && Rscript -e "tinytex::install_tinytex()" \

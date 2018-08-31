@@ -44,8 +44,8 @@ RUN apt-get update \
 ## Install R base
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
-    r-base-core=3.5.0-1bionic \
-    r-base-dev=3.5.0-1bionic \
+    r-base-core=3.5.1-1bionic \
+    r-base-dev=3.5.1-1bionic \
     r-cran-boot=1.3-20-1.1cranBionic0 \
     r-cran-class=7.3-14-2cranArtful0~ubuntu18.04.1~ppa1 \
     r-cran-cluster=2.0.7-1-1cranBionic0 \
@@ -61,7 +61,7 @@ RUN apt-get update \
     r-cran-rpart=4.1-13-1cranBionic0  \
     r-cran-spatial=7.3-11-2cranArtful0~ubuntu18.04.1~ppa1 \
     r-cran-survival=2.42-6-1cran1bionic0 \
-    r-recommended=3.5.0-1bionic
+    r-recommended=3.5.1-1bionic
 
 ## Install wget
 RUN apt-get update \

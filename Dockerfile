@@ -79,6 +79,6 @@ RUN ./cran_install.sh tinytex 0.8 \
 ENV PATH="/root/bin:${PATH}"
 
 ## Install pandoc
-RUN wget https://github.com/jgm/pandoc/releases/download/2.1.3/pandoc-2.1.3-1-amd64.deb \
-  && dpkg -i pandoc-2.1.3-1-amd64.deb\
-  && rm pandoc-2.1.3-1-amd64.deb
+RUN wget https://github.com/jgm/pandoc/releases/download/2.2.3.2/pandoc-2.2.3.2-1-amd64.deb \
+  && dpkg -i pandoc-2.2.3.2-1-amd64.deb\
+  && rm pandoc-2.2.3.2-1-amd64.deb

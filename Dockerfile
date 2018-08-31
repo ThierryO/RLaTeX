@@ -71,7 +71,7 @@ COPY cran_install.sh cran_install.sh
 
 ## Add minimal LaTeX configuration
 ## See https://yihui.name/tinytex
-RUN ./cran_install.sh tinytex 0.4 \
+RUN ./cran_install.sh tinytex 0.8 \
   && apt-get install -y --no-install-recommends \
     qpdf \
   && Rscript -e "tinytex::install_tinytex()" \

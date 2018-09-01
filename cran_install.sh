@@ -7,5 +7,5 @@ if wget --spider $cran$1"_"$2.tar.gz 2>/dev/null; then
 else
   wget $cran/Archive/$1/$1"_"$2.tar.gz
 fi
-R CMD INSTALL $1"_"$2.tar.gz
+R CMD INSTALL --clean --no-multiarch --without-keep.source --byte-compile --resave-data --compact-docs --no-demo $1"_"$2.tar.gz
 rm $1"_"$2.tar.gz

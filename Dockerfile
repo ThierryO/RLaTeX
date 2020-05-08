@@ -38,31 +38,31 @@ RUN apt-get update \
   && apt-get install -y --no-install-recommends \
     gnupg \
     ca-certificates \
-  && sh -c 'echo "deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/" >> /etc/apt/sources.list' \
+  && sh -c 'echo "deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/" >> /etc/apt/sources.list' \
   && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 \
   && gpg -a --export E298A3A825C0D65DFD57CBB651716619E084DAB9 | apt-key add -
 
 ## Install R base
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
-    r-base-core=3.6.1-3bionic \
-    r-base-dev=3.6.1-3bionic \
-    r-cran-boot=1.3-23-2bionic0 \
-    r-cran-class=7.3-15-1bionic0 \
+    r-base-core=4.0.0-1.1804.0 \
+    r-base-dev=4.0.0-1.1804.0 \
+    r-cran-boot=1.3-25-1cran1.1804.0 \
+    r-cran-class=7.3-17-1.1804.0 \
     r-cran-cluster=2.1.0-2bionic0 \
-    r-cran-codetools=0.2-16-1bionic0 \
-    r-cran-foreign=0.8.72-1bionic0 \
-    r-cran-kernsmooth=2.23-16-1+1bionic0 \
-    r-cran-lattice=0.20-38-1cran1bionic0 \
-    r-cran-mass=7.3-51.4-2bionic0 \
+    r-cran-codetools=0.2-16-2cran1.1804.0ubuntu1 \
+    r-cran-foreign=0.8.76-1.1804.0 \
+    r-cran-kernsmooth=2.23-17-1cran1.1804.0 \
+    r-cran-lattice=0.20-41-1cran1bionic0 \
+    r-cran-mass=7.3-51.6-1.1804.0 \
     r-cran-matrix=1.2-18-1bionic0 \
     r-cran-mgcv=1.8-31-1cran1bionic0 \
-    r-cran-nlme=3.1.142-1bionic0 \
-    r-cran-nnet=7.3-12-2cranArtful0~ubuntu18.04.1~ppa1 \
+    r-cran-nlme=3.1.147-1.1804.0 \
+    r-cran-nnet=7.3-14-1.1804.0 \
     r-cran-rpart=4.1-15-2bionic0 \
-    r-cran-spatial=7.3-11-2cranArtful0~ubuntu18.04.1~ppa1 \
-    r-cran-survival=2.44-1.1-2bionic0 \
-    r-recommended=3.6.1-3bionic
+    r-cran-spatial=7.3-11-2.1804.1 \
+    r-cran-survival=3.1-12-1cran1.1804.0 \
+    r-recommended=4.0.0-1.1804.0
 
 ## Install litter
 RUN apt-get update \

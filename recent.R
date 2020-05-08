@@ -22,5 +22,3 @@ x <- sapply(
 cat(x, sep = " \\\n")
 
 cat(ubuntu_version("littler"))
-
-
